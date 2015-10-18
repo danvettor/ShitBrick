@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (col.gameObject.CompareTag ("Lava"))
 		{
-			Application.LoadLevel(2);
+			Application.LoadLevel("LoseScene");
 		}
 		else if (col.gameObject.CompareTag ("Key"))
 		{
@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			if(hasKey)
 			{
-				Application.LoadLevel(3);
+                LevelController.ChangeLevel();
 			}
 		}
 
