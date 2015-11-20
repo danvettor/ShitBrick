@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class InputTreatment : MonoBehaviour {
 	[SerializeField]
 	private PlayerMovement playerMovement;
-	
+
+	[SerializeField]
+	private Text printDeltaPos;
+
 	Vector2 mousePos, mouseDeltaPos, touchPos, touchDeltaPos;
 	Touch touchHandler;
 	void Update ()
@@ -41,17 +45,21 @@ public class InputTreatment : MonoBehaviour {
 	void TouchInput()
 	{
 		touchHandler = Input.GetTouch (0);
+		printDeltaPos.text = "DeltaPos = " + touchHandler.deltaPosition;
+
 		if (touchHandler.phase == TouchPhase.Began)
 		{
 			touchDeltaPos = touchHandler.position;
 			playerMovement.Move (touchDeltaPos);
 		} 
-		else if (touchHandler.phase == TouchPhase.Ended) 
+		else if (touchHandler.deltaPosition.y > 10f)
+			playerMovement.Jump ();
+		/*else if (touchHandler.phase == TouchPhase.Ended) 
 		{
 			touchDeltaPos = touchHandler.position - touchDeltaPos;
 			if (touchDeltaPos.magnitude > Screen.height / 2 && touchDeltaPos.y > 0 && Vector2.Angle (touchDeltaPos, Vector2.right) > 45)
 				playerMovement.Jump ();
-		}
+		}*/
 			
 
 	}
