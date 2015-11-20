@@ -3,18 +3,9 @@ using System.Collections;
 
 public class LevelController : MonoBehaviour
 {
-    static public int levelIndex;
+    static public int levelIndex = 0;
     private string[] scenesNames;
-    // Use this for initialization
-    void Awake()
-    {
-        Application.DontDestroyOnLoad(transform.gameObject);
-    }
-    void Start()
-    {
-        levelIndex = 0;
-       
-    }
+
 
     static public void ChangeLevel()
     {

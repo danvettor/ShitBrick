@@ -33,42 +33,31 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void Update ()
 	{
+		//Jump ();
+	}
+
+	public void Move(Vector2 direction)
+	{
+		direction = direction - (Vector2) Camera.main.WorldToScreenPoint(transform.position);
+		direction = (Vector2) Vector3.Project (direction.normalized, (Vector3)Vector2.right);
+		lookingAt = Mathf.Round (direction.x);
+		if (lookingAt == 1 || lookingAt == -1) 
+		{
+			transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
+			playerRigidBody.velocity = new Vector2 (lookingAt*speed, playerRigidBody.velocity.y);
+
+		}
+	
+	}
+
+	public void Jump()
+	{
+		if(canJump)
+		{
+			canJump = false;
+			this.playerRigidBody.AddForce(Vector2.up*jumpForce);
+		}
 			
-		Move ();
-		Jump ();
-		//Debug.Log("Tamanho do sprite "+ GetComponent<Renderer>().bounds.size);
-	}
-	void Move()
-	{
-		direction = Input.GetAxisRaw("Horizontal");
-		anim.SetFloat ("Velocity", direction);
-		if (Input.GetKeyDown (KeyCode.RightArrow))
-		{
-			lookingAt = 1.0f;
-			transform.eulerAngles = new Vector2(0,0);
-		}
-		else if (Input.GetKeyDown(KeyCode.LeftArrow))
-		{
-			lookingAt = -1.0f;
-			transform.eulerAngles = new Vector2(0,180);
-		}
-		playerRigidBody.velocity = new Vector2 (direction*speed, playerRigidBody.velocity.y);
-
-
-	}
-
-	void Jump()
-	{
-		if (Input.GetKeyDown(KeyCode.UpArrow))   
-		{
-			if(canJump)
-			{
-				canJump = false;
-				this.playerRigidBody.AddForce(Vector2.up*jumpForce);
-			}
-		}
-
-		
 	}
 	void OnTriggerEnter2D(Collider2D col)
 	{
