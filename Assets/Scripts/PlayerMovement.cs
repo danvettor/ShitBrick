@@ -64,6 +64,8 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (col.gameObject.CompareTag ("Lava"))
 		{
+			LevelController.setLastScene(Application.loadedLevelName);
+			print (LevelController.getLastScene());
 			Application.LoadLevel("LoseScene");
 		}
 		else if (col.gameObject.CompareTag ("Key"))

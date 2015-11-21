@@ -9,6 +9,9 @@ public class InputTreatment : MonoBehaviour {
 	[SerializeField]
 	private Text printDeltaPos;
 
+	[SerializeField]
+	private float dyMinToJump = 10f;
+
 	Vector2 mousePos, mouseDeltaPos, touchPos, touchDeltaPos;
 	Touch touchHandler;
 	void Update ()
@@ -52,7 +55,7 @@ public class InputTreatment : MonoBehaviour {
 			touchDeltaPos = touchHandler.position;
 			playerMovement.Move (touchDeltaPos);
 		} 
-		else if (touchHandler.deltaPosition.y > 10f)
+		else if (touchHandler.deltaPosition.y > dyMinToJump)
 			playerMovement.Jump ();
 		/*else if (touchHandler.phase == TouchPhase.Ended) 
 		{
