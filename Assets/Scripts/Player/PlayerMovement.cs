@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void Update ()
 	{
-		//Jump ();
+		anim.SetFloat("Velocity", playerRigidBody.velocity.x);
 	}
 
 	public void Move(Vector2 direction)

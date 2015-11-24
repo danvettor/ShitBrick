@@ -1,0 +1,914 @@
+fileFormatVersion: 2
+guid: 6bb13ba6eb09da84a9714e9852518105
+timeCreated: 1448312588
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: robo_0
+    21300002: robo_1
+    21300004: robo_2
+    21300006: robo_3
+    21300008: robo_4
+    21300010: robo_5
+    21300012: robo_6
+    21300014: robo_7
+    21300016: robo_8
+    21300018: robo_9
+    21300020: robo_10
+    21300022: robo_11
+    21300024: robo_12
+    21300026: robo_13
+    21300028: robo_14
+    21300030: robo_15
+    21300032: robo_16
+    21300034: robo_17
+    21300036: robo_18
+    21300038: robo_19
+    21300040: robo_20
+    21300042: robo_21
+    21300044: robo_22
+    21300046: robo_23
+    21300048: robo_24
+    21300050: robo_25
+    21300052: robo_26
+    21300054: robo_27
+    21300056: robo_28
+    21300058: robo_29
+    21300060: robo_30
+    21300062: robo_31
+    21300064: robo_32
+    21300066: robo_33
+    21300068: robo_34
+    21300070: robo_35
+    21300072: robo_36
+    21300074: robo_37
+    21300076: robo_38
+    21300078: robo_39
+    21300080: robo_40
+    21300082: robo_41
+    21300084: robo_42
+    21300086: robo_43
+    21300088: robo_44
+    21300090: robo_45
+    21300092: robo_46
+    21300094: robo_47
+    21300096: robo_48
+    21300098: robo_49
+    21300100: robo_50
+    21300102: robo_51
+    21300104: robo_52
+    21300106: robo_53
+    21300108: robo_54
+    21300110: robo_55
+    21300112: robo_56
+    21300114: robo_57
+    21300116: robo_58
+    21300118: robo_59
+    21300120: robo_60
+    21300122: robo_61
+    21300124: robo_62
+    21300126: robo_63
+    21300128: robo_64
+    21300130: robo_65
+    21300132: robo_66
+    21300134: robo_67
+    21300136: robo_68
+    21300138: robo_69
+    21300140: robo_70
+    21300142: robo_71
+    21300144: robo_72
+    21300146: robo_73
+    21300148: robo_74
+    21300150: robo_75
+    21300152: robo_76
+    21300154: robo_77
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: robo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3353
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3353
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3266
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3266
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3179
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_5
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3179
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3092
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_7
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3092
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3005
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_9
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3005
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2918
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_11
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2918
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2831
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_13
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2831
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2744
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2744
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2657
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_17
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2657
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2570
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_19
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2570
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2483
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_21
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2483
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2396
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_23
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2396
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2309
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_25
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2309
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2222
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_27
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2222
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2135
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_29
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2135
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_31
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 2048
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1961
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_33
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1961
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1874
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_35
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1874
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1787
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_37
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1787
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1700
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_39
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1700
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1613
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_41
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1613
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1526
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_43
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1526
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1439
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_45
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1439
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1352
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_47
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1352
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1265
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_49
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1265
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1178
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_51
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1178
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1091
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_53
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1091
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1004
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_55
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1004
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 917
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_57
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 917
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 830
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_59
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 830
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 743
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_61
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 743
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 656
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_63
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 656
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 569
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_65
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 569
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 482
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_67
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 482
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 395
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_69
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 395
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_71
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 308
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 221
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_73
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 221
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_74
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 134
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_75
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 134
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: robo_77
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 47
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

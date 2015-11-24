@@ -13,7 +13,6 @@ public class InputTreatment : MonoBehaviour {
 	private float dyMinToJump = 10f;
 
 	Vector2 mousePos, mouseDeltaPos, touchPos, touchDeltaPos;
-	Touch touchHandler;
 	void Update ()
 	{
 		MouseInput ();
@@ -47,23 +46,18 @@ public class InputTreatment : MonoBehaviour {
 	
 	void TouchInput()
 	{
-		touchHandler = Input.GetTouch (0);
-		printDeltaPos.text = "DeltaPos = " + touchHandler.deltaPosition;
-
-		if (touchHandler.phase == TouchPhase.Began)
+//		printDeltaPos.text = "DeltaPos = " + Input.GetTouch(0).deltaPosition;
+		if(Input.touchCount > 0)
 		{
-			touchDeltaPos = touchHandler.position;
-			playerMovement.Move (touchDeltaPos);
-		} 
-		else if (touchHandler.deltaPosition.y > dyMinToJump)
-			playerMovement.Jump ();
-		/*else if (touchHandler.phase == TouchPhase.Ended) 
-		{
-			touchDeltaPos = touchHandler.position - touchDeltaPos;
-			if (touchDeltaPos.magnitude > Screen.height / 2 && touchDeltaPos.y > 0 && Vector2.Angle (touchDeltaPos, Vector2.right) > 45)
+			if (Input.GetTouch(0).phase == TouchPhase.Began)
+			{
+				touchDeltaPos = Input.GetTouch(0).position;
+				playerMovement.Move (touchDeltaPos);
+			} 
+			else if (Input.GetTouch(0).deltaPosition.y > dyMinToJump)
 				playerMovement.Jump ();
-		}*/
-			
+
+		}
 
 	}
 	
