@@ -12,12 +12,12 @@ public class PlayerMovement : MonoBehaviour {
 	private float direction;
 	private float brickDistance;
 	private Animator anim;
+	public bool 
+		canJump,
+		hasKey;
 	public GameObject 
 		brick,
 		keyUI;
-	private bool 
-		hasKey,
-		canJump;
 	// Use this for initialization
 	void Start () 
 	{
@@ -58,35 +58,6 @@ public class PlayerMovement : MonoBehaviour {
 			this.playerRigidBody.AddForce(Vector2.up*jumpForce);
 		}
 			
-	}
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		
-		if (col.gameObject.CompareTag ("Lava"))
-		{
-			LevelController.setLastScene(Application.loadedLevelName);
-			print (LevelController.getLastScene());
-			Application.LoadLevel("LoseScene");
-		}
-		else if (col.gameObject.CompareTag ("Key"))
-		{
-			Destroy(col.gameObject);
-			keyUI.SetActive(true);
-			hasKey = true;
-		}
-		
-		else if (col.gameObject.CompareTag ("Walkable"))
-		{
-			canJump = true;
-		}
-		else if (col.gameObject.CompareTag ("Exit"))
-		{
-			if(hasKey)
-			{
-                LevelController.ChangeLevel();
-			}
-		}
-
 	}
 
 

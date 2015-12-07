@@ -6,11 +6,13 @@ public class InputTreatment : MonoBehaviour {
 	[SerializeField]
 	private PlayerMovement playerMovement;
 
-	[SerializeField]
-	private Text printDeltaPos;
 
-	[SerializeField]
-	private float dyMinToJump = 10f;
+
+	private float dyMinToJump;
+	void Start()
+	{
+		dyMinToJump = Screen.height / 4;
+	}
 
 	Vector2 mousePos, mouseDeltaPos, touchPos, touchDeltaPos;
 	void Update ()
@@ -47,7 +49,7 @@ public class InputTreatment : MonoBehaviour {
 	void TouchInput()
 	{
 //		printDeltaPos.text = "DeltaPos = " + Input.GetTouch(0).deltaPosition;
-		if(Input.touchCount > 0)
+		for(int i = 0; i < Input.touchCount; i++)
 		{
 			if (Input.GetTouch(0).phase == TouchPhase.Began)
 			{

@@ -24,6 +24,8 @@ public class LevelController : MonoBehaviour
 
     static public void ChangeLevel()
     {
+		if (Application.loadedLevel == 3) 
+			Application.LoadLevel ("WinScene");
         Application.LoadLevel(Application.loadedLevel +1);
 
         Debug.Log("Level index: " + Application.loadedLevel);
