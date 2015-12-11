@@ -8,10 +8,10 @@ public class InputTreatment : MonoBehaviour {
 
 
 
-	private float dyMinToJump;
+	private float minTouchSpeedToJump;
 	void Start()
 	{
-		dyMinToJump = Screen.height / 4;
+		minTouchSpeedToJump = Screen.height / 2;
 	}
 
 	Vector2 mousePos, mouseDeltaPos, touchPos, touchDeltaPos;
@@ -56,7 +56,7 @@ public class InputTreatment : MonoBehaviour {
 				touchDeltaPos = Input.GetTouch(0).position;
 				playerMovement.Move (touchDeltaPos);
 			} 
-			else if (Input.GetTouch(0).deltaPosition.y > dyMinToJump)
+			else if (Input.GetTouch(0).deltaPosition.y / Input.GetTouch(0).deltaTime > minTouchSpeedToJump)
 				playerMovement.Jump ();
 
 		}
