@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 
-
-	public float speed;
-
+	private IEnumerator coroutine;
 	private Rigidbody2D playerRigidBody;
-	public float jumpForce;
-	private float lookingAt;
-	private float direction;
-	private float brickDistance;
+	public float 
+		speed,
+		jumpForce;
+	public Slider velSlider;
+	private float 
+		lookingAt,
+		direction, 
+		brickDistance;
 	private Animator anim;
 	public bool 
 		canJump,
@@ -21,6 +24,9 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		
+		velSlider.minValue = -1;
+		//velSlider.gameObject.SetActive(false);
 		canJump = true;
 		hasKey = false;
 		anim = GetComponent<Animator> ();
@@ -34,21 +40,42 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
 	{
 		anim.SetFloat("Velocity", playerRigidBody.velocity.x);
+		
 	}
-
-	public void Move(Vector2 direction)
+	public void StartMoving(float direction)
 	{
-		direction = direction - (Vector2) Camera.main.WorldToScreenPoint(transform.position);
-		direction = (Vector2) Vector3.Project (direction.normalized, (Vector3)Vector2.right);
-		lookingAt = Mathf.Round (direction.x);
+		//coroutine = Move (direction);
+		//StartCoroutine(coroutine);
+	
+	}
+	public void StopMoving()
+	{
+		//StopCoroutine(coroutine);
+	}
+	
+	public void Move(float direction) 
+	{
+		//direction = direction - (Vector2) Camera.main.WorldToScreenPoint(transform.position);
+		//direction = (Vector2) Vector3.Project (direction.normalized, (Vector3)Vector2.right);
+		
+		lookingAt = Mathf.Round (direction);
 		if (lookingAt == 1 || lookingAt == -1) 
 		{
 			transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
-			playerRigidBody.velocity = new Vector2 (lookingAt*speed, playerRigidBody.velocity.y);
-
+			playerRigidBody.velocity = new Vector2 (lookingAt * speed, playerRigidBody.velocity.y);
+			velSlider.value = lookingAt;
 		}
-	
 	}
+	/*IEnumerator Move(float direction)
+	{
+		while(true)
+		{
+			transform.eulerAngles = new Vector2 (0, Mathf.Acos (direction) * Mathf.Rad2Deg);
+			
+			playerRigidBody.velocity = new Vector2 (direction*speed, playerRigidBody.velocity.y);
+			yield return new WaitForSeconds(0.05f);
+		}
+	}*/
 
 	public void Jump()
 	{
@@ -56,8 +83,7 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			canJump = false;
 			this.playerRigidBody.AddForce(Vector2.up*jumpForce);
-		}
-			
+		}	
 	}
 
 

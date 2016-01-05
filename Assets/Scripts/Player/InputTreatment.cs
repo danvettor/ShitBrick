@@ -5,19 +5,17 @@ using System.Collections;
 public class InputTreatment : MonoBehaviour {
 	[SerializeField]
 	private PlayerMovement playerMovement;
-
-
-
-	private float minTouchSpeedToJump;
+	private float minTouchSpeedToJump, touchDeltaX;
+	Vector2 mousePos, mouseDeltaPos, touchPos;
+	
 	void Start()
 	{
 		minTouchSpeedToJump = Screen.height / 2;
 	}
 
-	Vector2 mousePos, mouseDeltaPos, touchPos, touchDeltaPos;
 	void Update ()
 	{
-		MouseInput ();
+		//MouseInput ();
 		TouchInput ();
 	}
 
@@ -32,7 +30,7 @@ public class InputTreatment : MonoBehaviour {
 		if (Input.GetMouseButton (0))
 		{
 			mousePos = Input.mousePosition;
-			playerMovement.Move(mousePos);
+			//playerMovement.Move(mousePos);
 
 		}
 		else if (Input.GetMouseButtonUp (0))
@@ -53,9 +51,17 @@ public class InputTreatment : MonoBehaviour {
 		{
 			if (Input.GetTouch(0).phase == TouchPhase.Began)
 			{
-				touchDeltaPos = Input.GetTouch(0).position;
-				playerMovement.Move (touchDeltaPos);
+				touchDeltaX = Input.GetTouch(0).position.x;
 			} 
+			else if (Input.GetTouch (0).phase == TouchPhase.Moved)
+			{
+				touchDeltaX = Input.GetTouch(0).position.x - touchDeltaX;
+				playerMovement.Move(touchDeltaX);
+			}
+			else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+			{
+				gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+			}
 			else if (Input.GetTouch(0).deltaPosition.y / Input.GetTouch(0).deltaTime > minTouchSpeedToJump)
 				playerMovement.Jump ();
 
