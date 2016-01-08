@@ -5,12 +5,19 @@ using System.Collections;
 public class InputTreatment : MonoBehaviour {
 	[SerializeField]
 	private PlayerMovement playerMovement;
-	private float minTouchSpeedToJump, touchDeltaX;
+	private float minTouchSpeedToJump, initialX, touchDX, maxTouchDX;
 	Vector2 mousePos, mouseDeltaPos, touchPos;
+
+	[SerializeField]
+	private Slider slider;
+	private float sliderDY;
 	
 	void Start()
 	{
 		minTouchSpeedToJump = Screen.height / 2;
+		maxTouchDX = slider.handleRect.anchorMax.x;
+		sliderDY = Screen.height / 6;
+		print ("maxTouchDX = " + maxTouchDX);
 	}
 
 	void Update ()
@@ -49,24 +56,40 @@ public class InputTreatment : MonoBehaviour {
 //		printDeltaPos.text = "DeltaPos = " + Input.GetTouch(0).deltaPosition;
 		for(int i = 0; i < Input.touchCount; i++)
 		{
-			if (Input.GetTouch(0).phase == TouchPhase.Began)
+			if (Input.GetTouch(i).position.x < Screen.width / 2)
 			{
-				touchDeltaX = Input.GetTouch(0).position.x;
-			} 
-			else if (Input.GetTouch (0).phase == TouchPhase.Moved)
-			{
-				touchDeltaX = Input.GetTouch(0).position.x - touchDeltaX;
-				playerMovement.Move(touchDeltaX);
+				if (Input.GetTouch(i).phase == TouchPhase.Began)
+				{
+					initialX = Input.GetTouch(i).position.x;
+					showSlider (i);
+				} 
+				else if (Input.GetTouch (i).phase == TouchPhase.Moved)
+				{
+					touchDX = Input.GetTouch(i).position.x - initialX;
+					playerMovement.Move(touchDX);
+					slider.value = touchDX;
+				}
+				else if (Input.GetTouch(i).phase == TouchPhase.Ended)
+				{
+					gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+					slider.gameObject.SetActive(false);
+				}
 			}
-			else if (Input.GetTouch(0).phase == TouchPhase.Ended)
+			else
 			{
-				gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-			}
-			else if (Input.GetTouch(0).deltaPosition.y / Input.GetTouch(0).deltaTime > minTouchSpeedToJump)
+				if (Input.GetTouch(i).deltaPosition.y / Input.GetTouch(i).deltaTime > minTouchSpeedToJump)
 				playerMovement.Jump ();
+			}
 
 		}
+		print ("DeltaX = " + touchDX);
 
 	}
 	
+	void showSlider (int i)
+	{
+		slider.gameObject.SetActive (true);
+		slider.transform.position = new Vector3 (initialX, Input.GetTouch (i).position.y + sliderDY, slider.transform.position.z);
+		slider.value = 0;
+	}
 }

@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
 	public float 
 		speed,
 		jumpForce;
-	public Slider velSlider;
 	private float 
 		lookingAt,
 		direction, 
@@ -24,9 +23,6 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
-		velSlider.minValue = -1;
-		//velSlider.gameObject.SetActive(false);
 		canJump = true;
 		hasKey = false;
 		anim = GetComponent<Animator> ();
@@ -57,13 +53,12 @@ public class PlayerMovement : MonoBehaviour {
 	{
 		//direction = direction - (Vector2) Camera.main.WorldToScreenPoint(transform.position);
 		//direction = (Vector2) Vector3.Project (direction.normalized, (Vector3)Vector2.right);
-		
-		lookingAt = Mathf.Round (direction);
+
+		lookingAt = direction > 0 ? 1: -1;
 		if (lookingAt == 1 || lookingAt == -1) 
 		{
 			transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
 			playerRigidBody.velocity = new Vector2 (lookingAt * speed, playerRigidBody.velocity.y);
-			velSlider.value = lookingAt;
 		}
 	}
 	/*IEnumerator Move(float direction)
