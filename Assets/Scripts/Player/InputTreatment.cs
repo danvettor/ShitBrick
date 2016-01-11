@@ -6,7 +6,7 @@ public class InputTreatment : MonoBehaviour {
 	[SerializeField]
 	private PlayerMovement playerMovement;
 	private float minTouchSpeedToJump, initialX, touchDX, maxTouchDX;
-	Vector2 mousePos, mouseDeltaPos, touchPos;
+	Vector2 mousePos, mouseDeltaPos, touchPos, touchInitialPos;
 
 	[SerializeField]
 	private Slider slider;
@@ -60,12 +60,19 @@ public class InputTreatment : MonoBehaviour {
 			{
 				if (Input.GetTouch(i).phase == TouchPhase.Began)
 				{
-					initialX = Input.GetTouch(i).position.x;
-					showSlider (i);
+					touchInitialPos = ShowSlider (Input.GetTouch(i).position);
+
 				} 
 				else if (Input.GetTouch (i).phase == TouchPhase.Moved)
 				{
-					touchDX = Input.GetTouch(i).position.x - initialX;
+					MoveSlider(Input.GetTouch(i).position);
+					touchDX = Input.GetTouch(i).position.x - touchInitialPos.x;
+
+					playerMovement.Move(touchDX);
+					slider.value = touchDX;
+				}
+				else if(Input.GetTouch (i).phase == TouchPhase.Stationary)
+				{
 					playerMovement.Move(touchDX);
 					slider.value = touchDX;
 				}
@@ -86,10 +93,17 @@ public class InputTreatment : MonoBehaviour {
 
 	}
 	
-	void showSlider (int i)
-	{
+	Vector3 ShowSlider (Vector3 initialPos)
+	{	
+		slider.transform.position = new Vector3(initialPos.x, initialPos.y + sliderDY, initialPos.z);
 		slider.gameObject.SetActive (true);
-		slider.transform.position = new Vector3 (initialX, Input.GetTouch (i).position.y + sliderDY, slider.transform.position.z);
 		slider.value = 0;
+		return initialPos;
+	}
+	void MoveSlider(Vector2 variationPos)
+	{
+		Vector3 newPos = new Vector3 (variationPos.x, variationPos.y + sliderDY, slider.transform.position.z);
+		slider.transform.position = Vector3.Lerp(slider.transform.position, newPos, 0.4f);
+
 	}
 }
