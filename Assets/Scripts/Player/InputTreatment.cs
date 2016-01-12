@@ -61,20 +61,23 @@ public class InputTreatment : MonoBehaviour {
 				if (Input.GetTouch(i).phase == TouchPhase.Began)
 				{
 					touchInitialPos = ShowSlider (Input.GetTouch(i).position);
-
+					touchDX = 0;
 				} 
 				else if (Input.GetTouch (i).phase == TouchPhase.Moved)
 				{
-					MoveSlider(Input.GetTouch(i).position);
+					//MoveSlider(Input.GetTouch(i).position);
 					touchDX = Input.GetTouch(i).position.x - touchInitialPos.x;
 
 					playerMovement.Move(touchDX);
 					slider.value = touchDX;
+				//	Debug.Log("DX:" + touchDX);
 				}
 				else if(Input.GetTouch (i).phase == TouchPhase.Stationary)
 				{
+				//	MoveSlider(Input.GetTouch(i).position);
 					playerMovement.Move(touchDX);
 					slider.value = touchDX;
+				//	Debug.Log("DX:" + touchDX);
 				}
 				else if (Input.GetTouch(i).phase == TouchPhase.Ended)
 				{
@@ -89,7 +92,6 @@ public class InputTreatment : MonoBehaviour {
 			}
 
 		}
-		print ("DeltaX = " + touchDX);
 
 	}
 	

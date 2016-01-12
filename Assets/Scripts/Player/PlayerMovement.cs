@@ -36,11 +36,11 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
 	{
 		anim.SetFloat("Velocity", playerRigidBody.velocity.x);
-		
 	}
 	
 	public void Move(float direction) 
-	{	lookingAt = direction > 0 ? 1: -1;
+	{	
+		lookingAt = direction > 0 ? 1: -1;
 		if (lookingAt == 1 || lookingAt == -1) 
 		{
 			transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
