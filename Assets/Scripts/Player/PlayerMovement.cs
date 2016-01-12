@@ -38,39 +38,15 @@ public class PlayerMovement : MonoBehaviour {
 		anim.SetFloat("Velocity", playerRigidBody.velocity.x);
 		
 	}
-	public void StartMoving(float direction)
-	{
-		//coroutine = Move (direction);
-		//StartCoroutine(coroutine);
-	
-	}
-	public void StopMoving()
-	{
-		//StopCoroutine(coroutine);
-	}
 	
 	public void Move(float direction) 
-	{
-		//direction = direction - (Vector2) Camera.main.WorldToScreenPoint(transform.position);
-		//direction = (Vector2) Vector3.Project (direction.normalized, (Vector3)Vector2.right);
-
-		lookingAt = direction > 0 ? 1: -1;
+	{	lookingAt = direction > 0 ? 1: -1;
 		if (lookingAt == 1 || lookingAt == -1) 
 		{
 			transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
 			playerRigidBody.velocity = new Vector2 (lookingAt * speed, playerRigidBody.velocity.y);
 		}
 	}
-	/*IEnumerator Move(float direction)
-	{
-		while(true)
-		{
-			transform.eulerAngles = new Vector2 (0, Mathf.Acos (direction) * Mathf.Rad2Deg);
-			
-			playerRigidBody.velocity = new Vector2 (direction*speed, playerRigidBody.velocity.y);
-			yield return new WaitForSeconds(0.05f);
-		}
-	}*/
 
 	public void Jump()
 	{

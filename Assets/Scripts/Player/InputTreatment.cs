@@ -22,7 +22,7 @@ public class InputTreatment : MonoBehaviour {
 
 	void Update ()
 	{
-		//MouseInput ();
+		MouseInput ();
 		TouchInput ();
 	}
 

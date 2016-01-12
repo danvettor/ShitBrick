@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraController : MonoBehaviour
 {
 
-    public Transform Player;
+    private Transform Player;
 
     public Vector2
         Margin,
@@ -22,6 +22,8 @@ public class CameraController : MonoBehaviour
         _min = Bounds.bounds.min;
         _max = Bounds.bounds.max;
         IsFollowing = true;
+		Player = GameObject.Find("Player").transform;
+
     }
 
     public void LateUpdate()
