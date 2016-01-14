@@ -16,7 +16,7 @@ public class PassTitleScene : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (2);
 
-        LevelController.ChangeLevel();
+        LevelController.ChangeLevel("Level1");
         StopCoroutine(Title());
 	}
 }

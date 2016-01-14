@@ -27,7 +27,10 @@ public class CollisionTreatment : MonoBehaviour {
 		{
 			if(GetComponent<PlayerMovement>().hasKey)
 			{
-				LevelController.ChangeLevel();
+				if(Application.loadedLevelName == "Level3")
+					LevelController.ChangeLevel("WinScene");
+				else
+					LevelController.ChangeLevel("Level" + (Application.loadedLevel + 1));
 			}
 		}
 		

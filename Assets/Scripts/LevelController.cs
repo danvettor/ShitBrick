@@ -22,13 +22,9 @@ public class LevelController : MonoBehaviour
 		Application.LoadLevel (LevelController.getLastScene());
 	}
 
-    static public void ChangeLevel()
+    static public void ChangeLevel(string sceneName)
     {
-		if (Application.loadedLevel == 3) 
-			Application.LoadLevel ("WinScene");
-        Application.LoadLevel(Application.loadedLevel +1);
-
-        Debug.Log("Level index: " + Application.loadedLevel);
+        Application.LoadLevel(sceneName);
     }
 }
 
