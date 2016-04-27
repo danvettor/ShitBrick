@@ -22,7 +22,7 @@ public class InputTreatment : MonoBehaviour {
 
 	void Update ()
 	{
-		MouseInput ();
+		//MouseInput ();
 		TouchInput ();
 	}
 
@@ -54,32 +54,34 @@ public class InputTreatment : MonoBehaviour {
 	void TouchInput()
 	{
 //		printDeltaPos.text = "DeltaPos = " + Input.GetTouch(0).deltaPosition;
-		for(int i = 0; i < Input.touchCount; i++)
+		print (Input.touches.GetLength(0));
+		foreach(Touch currentTouch in Input.touches)
 		{
-			if (Input.GetTouch(i).position.x < Screen.width / 2)
+			print ("Touch id" + currentTouch.fingerId);
+			if (currentTouch.position.x < Screen.width / 2)
 			{
-				if (Input.GetTouch(i).phase == TouchPhase.Began)
+				if (currentTouch.phase == TouchPhase.Began)
 				{
-					touchInitialPos = ShowSlider (Input.GetTouch(i).position);
+					touchInitialPos = ShowSlider (currentTouch.position);
 					touchDX = 0;
 				} 
-				else if (Input.GetTouch (i).phase == TouchPhase.Moved)
+				else if (currentTouch.phase == TouchPhase.Moved)
 				{
-					//MoveSlider(Input.GetTouch(i).position);
-					touchDX = Input.GetTouch(i).position.x - touchInitialPos.x;
+					//MoveSlider(currentTouch.position);
+					touchDX = currentTouch.position.x - touchInitialPos.x;
 
 					playerMovement.Move(touchDX);
 					slider.value = touchDX;
 				//	Debug.Log("DX:" + touchDX);
 				}
-				else if(Input.GetTouch (i).phase == TouchPhase.Stationary)
+				else if(currentTouch.phase == TouchPhase.Stationary)
 				{
-				//	MoveSlider(Input.GetTouch(i).position);
+				//	MoveSlider(currentTouch.position);
 					playerMovement.Move(touchDX);
 					slider.value = touchDX;
 				//	Debug.Log("DX:" + touchDX);
 				}
-				else if (Input.GetTouch(i).phase == TouchPhase.Ended)
+				else if (currentTouch.phase == TouchPhase.Ended)
 				{
 					gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 					slider.gameObject.SetActive(false);
@@ -87,8 +89,15 @@ public class InputTreatment : MonoBehaviour {
 			}
 			else
 			{
-				if (Input.GetTouch(i).deltaPosition.y / Input.GetTouch(i).deltaTime > minTouchSpeedToJump)
-				playerMovement.Jump ();
+				RaycastHit hit;
+				Ray ray = Camera.main.ScreenPointToRay(currentTouch.position);
+				if (Physics.Raycast(ray, out hit))
+				{
+					print ("WAT");
+					if (hit.collider.gameObject.CompareTag("JumpButton")){
+						playerMovement.Jump ();
+					}
+				}
 			}
 
 		}
