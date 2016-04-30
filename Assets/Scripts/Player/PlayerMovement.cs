@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -36,16 +37,26 @@ public class PlayerMovement : MonoBehaviour {
 	void Update ()
 	{
 		anim.SetFloat("Velocity", playerRigidBody.velocity.x);
+		
+		Move (CrossPlatformInputManager.GetAxis ("Horizontal"));
+		if (CrossPlatformInputManager.GetButton("Jump"))
+		{
+			Jump();
+		}
 	}
 	
 	public void Move(float direction) 
 	{	
-		lookingAt = direction > 0 ? 1: -1;
-		if (lookingAt == 1 || lookingAt == -1) 
+		if (direction != 0)
 		{
-			transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
-			playerRigidBody.velocity = new Vector2 (lookingAt * speed, playerRigidBody.velocity.y);
+			lookingAt = direction > 0 ? 1 : -1;
+			if (lookingAt == 1 || lookingAt == -1)
+			{
+				transform.eulerAngles = new Vector2 (0, Mathf.Acos (lookingAt) * Mathf.Rad2Deg);
+				playerRigidBody.velocity = new Vector2 (direction * speed, playerRigidBody.velocity.y);
+			}
 		}
+
 	}
 
 	public void Jump()
@@ -62,7 +73,8 @@ public class PlayerMovement : MonoBehaviour {
 	IEnumerator leaveBrick()
 	{
 		yield return new WaitForSeconds (2);
-		while (true) {
+		while (true)
+		{
 			Vector3 brickPosition = new Vector3 (transform.position.x + brickDistance*(-lookingAt), transform.position.y, transform.position.z);
 			Instantiate(brick, brickPosition, Quaternion.identity);
 			yield return new WaitForSeconds (2);
